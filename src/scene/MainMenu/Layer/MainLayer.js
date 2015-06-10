@@ -193,7 +193,6 @@ var MMMainLayer = cc.Layer.extend({
         var right = new cc.Sprite("res/MainMenu/front_smoke_3.png");
         this.addChild(right);
         right.setPosition(V.w2 + 405, 190);
-
     },
     loadForeMonster : function(){
         var rightYellow = new cc.Sprite("res/MainMenu/front_monster_7.png");
