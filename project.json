@@ -8,10 +8,16 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d", "extensions"],
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/config.js",
+
+        "src/scene/MainMenu/Layer/BackgroundLayer.js",
+        "src/scene/MainMenu/Layer/MainLayer.js",
+        "src/scene/MainMenu/Layer/TipLayer.js",
+        "src/scene/MainMenu/MainMenu.js"
+
     ]
 }

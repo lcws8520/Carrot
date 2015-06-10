@@ -46,6 +46,16 @@
  }
  *
  */
+cc.game.loadConfig = function(){
+    V.winSize  = cc.winSize;
+    V.w        = V.winSize.width;
+    V.h        = V.winSize.height;
+    V.w2       = V.w / 2;
+    V.h2       = V.h / 2;
+
+    GC.i18n = cc.sys.language;
+    cc.log("当前语言：", GC.i18n);
+};
 
 cc.game.onStart = function(){
     if(!cc.sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
@@ -56,12 +66,14 @@ cc.game.onStart = function(){
     // Adjust viewport meta
     cc.view.adjustViewPort(true);
     // Setup the resolution policy and design resolution size
-    cc.view.setDesignResolutionSize(800, 450, cc.ResolutionPolicy.SHOW_ALL);
+    cc.view.setDesignResolutionSize(1136, 640, cc.ResolutionPolicy.FIXED_HEIGHT);
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
+    // Load game config
+    cc.game.loadConfig();
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
-        cc.director.runScene(new HelloWorldScene());
+        cc.director.runScene(new MainMenuScene());
     }, this);
 };
 cc.game.run();
