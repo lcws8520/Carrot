@@ -69,6 +69,8 @@ cc.game.onStart = function(){
     cc.view.setDesignResolutionSize(1136, 640, cc.ResolutionPolicy.FIXED_HEIGHT);
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
+    // Close auto full screen
+    cc.view.enableAutoFullScreen(false);
     // Load game config
     cc.game.loadConfig();
     //load resources
